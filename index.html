@@ -32,10 +32,32 @@
      </script>
   </head>
   <body>
-    <h1>Hello, world!</h1>
 
-    
+    <div class="container" id="login-form">
+            <div class="col-md-6 offset-md-3 bg-light">
+                    <form>
+                            <div class="form-group">
+                              <label for="inputEmail">Email</label>
+                              <input type="email" class="form-control" id="inputIEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+                            <div class="form-group">
+                              <label for="inputPassword">Password</label>
+                              <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <button type="button" id="sign-in-button" class="btn btn-primary btn-block">SignIn</button>
+                                <button type="button" id="create-newuser-button" class="btn btn-warning btn-block">Create new account</button>
+                                <button type="login-login-button" id="sign-in-button" class="btn btn-dark btn-block">SignIn with Google</button>
 
+                            </div>
+                    </form>
+            </div>
+                
+    </div>
+
+
+    <!-- https://www.youtube.com/watch?v=xnf0lSIL3DA&list=PLhPyEFL5u-i3uKNMHSDFx0_EqWiiPsvLk&index=3 -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
