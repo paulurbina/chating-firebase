@@ -33,13 +33,14 @@
   </head>
   <body>
 
-    <div class="container" id="login-form">
+    <!-- login form -->
+
+    <div class="container mt-5" id="login-form">
             <div class="col-md-6 offset-md-3 bg-light">
                     <form>
                             <div class="form-group">
                               <label for="inputEmail">Email</label>
                               <input type="email" class="form-control" id="inputIEmail" aria-describedby="emailHelp" placeholder="Enter email">
-                              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
                             <div class="form-group">
                               <label for="inputPassword">Password</label>
@@ -55,6 +56,33 @@
             </div>
                 
     </div>
+
+    <!-- add nick form -->
+
+    <div class="container" id="add-nick">
+        <div class="col-md-6 offset-md-3 bg-light">
+                <form>
+                        <div class="form-group">
+                          <label for="inputNickName">Create New Nick</label>
+                          <input type="text" class="form-control" id="inputNickName" aria-describedby="emailHelp" placeholder="Enter Nick">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Nick Race</label>
+                            <div class="input-group">
+                                <select class="custom-select" id="nickRace" aria-label="Example select with button addon">
+                                  <option selected>Choose...</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="button" id="create-newnick-button" class="btn btn-primary btn-block">Create New Nick</button>
+
+                </form>
+        </div>
+            
+</div>
 
 
     <!-- https://www.youtube.com/watch?v=xnf0lSIL3DA&list=PLhPyEFL5u-i3uKNMHSDFx0_EqWiiPsvLk&index=3 -->
