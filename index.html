@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>ChaT Ting</title>
 
      <!-- The core Firebase JS SDK is always required and must be listed first -->
      <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
@@ -74,10 +74,47 @@
                                   <option value="1">One</option>
                                   <option value="2">Two</option>
                                   <option value="3">Three</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
                                 </select>
                             </div>
                         </div>
-                        <button type="button" id="create-newnick-button" class="btn btn-primary btn-block">Create New Nick</button>
+                        <div class="form-group">
+                          <label for="nick-professional"></label>
+                          <div class="input-group">
+                              <select class="custom-select" id="nick-professional" aria-label="Example select with button addon">
+                                <option selected>Choose...</option>
+                                <option value="Scaler">Scaler</option>
+                                <option value="Mirror">Mirror</option>
+                                <option value="Stek">Stek</option>
+                                <option value="Scaler">Scaler</option>
+                                <option value="Mirror">Mirror</option>
+                                <option value="Stek">Stek</option>
+                                <option value="Scaler">Scaler</option>
+                                <option value="Mirror">Mirror</option>
+                                <option value="Stek">Stek</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="nick-strenght">Nick Strenght: <span class="attribute-value">50</span></label>
+                        <input type="range" name="nick-points" class="form-control-range" id="nick-strenght" value="50" min="0" max="100">
+                      </div>
+                      <div class="form-group">
+                        <label for="nick-speed">Nick Speed: <span class="attribute-value">50</span></label>
+                        <input type="range" name="nick-speed" class="form-control-range" id="nick-speed" value="50" min="0" max="100">
+                      </div>
+                      <div class="form-group">
+                        <label for="nick-stamina">Nick Stamina: <span class="attribute-value">50</span></label>
+                        <input type="range" name="nick-stamina" class="form-control-range" id="nick-stamina" value="50" min="0" max="100">
+                      </div>
+                     <div class="form-group">
+                       <label for="">
+                         <input type="checkbox" id="id-diety">Is Diety
+                       </label>
+                     </div>
+                      <button type="button" id="create-newnick-button" class="btn btn-primary btn-block">Create New Nick</button>
 
                 </form>
         </div>
