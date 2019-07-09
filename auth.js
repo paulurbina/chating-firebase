@@ -3,14 +3,15 @@
 //variable global
 var currentUser = {};
 
+
 $('#create-newUser-button').click(function () {
     var email = $('#inputIEmail').val();
     var password = $('#inputPassword').val();
-    SignIn(email, password);
+    CreateNewUser(email, password);
     console.log("New User:"+ " " + email + " " + password);
 });
 
-function SignIn(email, password) {
+function CreateNewUser(email, password) {
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
@@ -19,6 +20,31 @@ function SignIn(email, password) {
         console.log(errorCode, errorMessage);
       });      
 }
+
+$('#sign-in-button').click(function () {
+    var email = $('#inputIEmail').val();
+    var password = $('#inputPassword').val();
+    SignIn(email, password);
+    console.log("Existing User:"+ " " + email + " " + password);
+});
+
+function SignIn(email, password) {
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+        console.log(errorMessage);
+      });
+}
+
+$('#logout-form').click(function () {
+    firebase.auth().signOut().then(function() {
+        // Sign-out successful.
+      }).catch(function(error) {
+        // An error happened.
+      });
+});
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
