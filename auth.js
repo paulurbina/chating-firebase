@@ -38,9 +38,11 @@ function SignIn(email, password) {
       });
 }
 
-$('#logout-form').click(function () {
+$('#logout-button').click(function () {
     firebase.auth().signOut().then(function() {
         // Sign-out successful.
+        console.log('logout as');
+        
       }).catch(function(error) {
         // An error happened.
       });
