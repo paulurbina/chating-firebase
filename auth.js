@@ -21,6 +21,14 @@ function CreateNewUser(email, password) {
       });      
 }
 
+// save data
+function writeUserData(user) {
+  firebase.database().ref('users/' + user.uid).set({
+    email: user.email,
+  });
+}
+
+// signing button
 $('#sign-in-button').click(function () {
     var email = $('#inputIEmail').val();
     var password = $('#inputPassword').val();
@@ -59,8 +67,8 @@ firebase.auth().onAuthStateChanged(function(user) {
       var uid = user.uid;
       var providerData = user.providerData;
       currentUser = user;
+      writeUserData(user);
       console.log(currentUser.email + " has logged in");
-      
       // ...
     } else {
       // User is signed out.
