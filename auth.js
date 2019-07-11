@@ -84,6 +84,31 @@ function addNicktoDatabase(n) {
 }
 
 
+//SHOW Nick on screen
+var nickCountRef = firebase.database().ref().child('nicks');
+  nickCountRef.on('value', function(snapshot) {
+    $('#show-nicks').empty();   
+    var nickHTMLItem = "Here all Nicks you database!" 
+    snapshot.forEach(function(childsnapshot) {
+      var persom = childsnapshot.val();
+      nickHTMLItem = `
+      <div>
+        <h3>${nickHTMLItem}</h3>        
+        <ul>
+          <li>${persom.name}<li>
+          <li>${persom.owner}<li>
+          <li>${persom.professional}<li>
+          <li>${persom.race}<li>
+          <li>${persom.speed}<li>
+          <li>${persom.stamina}<li>
+          <li>${persom.strenght}<li>
+        </ul>
+      </div>
+      `
+      console.log(persom);
+      
+    });
+});
 
 
 firebase.auth().onAuthStateChanged(function(user) {
