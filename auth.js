@@ -1,7 +1,7 @@
 //console.log('active');
 
 //variable global
-var currentUser = {};
+var currentUser = {}; 
 
 
 $('#create-newUser-button').click(function () {
@@ -54,6 +54,25 @@ $('#logout-button').click(function () {
       }).catch(function(error) {
         // An error happened.
       });
+});
+
+//Save Create NewNick 
+$('#create-newnick-button').click(function () {
+  //inputs ids user  
+  var nick = {
+    name: $('#inputNickName').val(),
+    race: $('#nickRace :selected').val(),
+    professional: $('#nick-professional :selected').val(),
+    strenght: $('#nick-strenght').val(),
+    speed: $('#nick-speed').val(),
+    stamina: $('#nick-stamina').val(),
+    diety: $('#id-diety').val()
+  };
+
+  //write data in the database
+  firebase.database().ref().set({
+      
+  });
 });
 
 firebase.auth().onAuthStateChanged(function(user) {
