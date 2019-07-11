@@ -60,20 +60,31 @@ $('#logout-button').click(function () {
 $('#create-newnick-button').click(function () {
   //inputs ids user  
   var nick = {
+    id: $('#inputNickName').val() + Date.now(),
+    owner: currentUser.uid,
     name: $('#inputNickName').val(),
     race: $('#nickRace :selected').val(),
     professional: $('#nick-professional :selected').val(),
     strenght: $('#nick-strenght').val(),
     speed: $('#nick-speed').val(),
     stamina: $('#nick-stamina').val(),
-    diety: $('#id-diety').val()
+    diety: $('#id-diety').prop('checked')
   };
 
   //write data in the database
-  firebase.database().ref().set({
-      
-  });
+  addNicktoDatabase(nick);
 });
+
+function addNicktoDatabase(n) {
+  firebase.database().ref('nicks/' + n.id).set(n);
+  firebase.database().ref('users/' + currentUser.uid + '/nicks/' + n.id).set(n)
+    .then(function() {
+      console.log('Nick user save database');
+    });
+}
+
+
+
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
