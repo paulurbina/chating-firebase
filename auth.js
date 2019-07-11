@@ -102,6 +102,8 @@ var nickCountRef = firebase.database().ref().child('nicks');
           <li>Speed: <span>${persom.speed}</span></li>
           <li>Stamina: <span>${persom.stamina}</span></li>
           <li>Strenght: <span>${persom.strenght}</span></li>
+          <button type="button" class="btn btn-danger btn-sm delete-nick" id="${persom.id}">Delete Me</button>
+          <button class="btn btn-success btn-sm">Success</button>
         </ul>
       </div>
       `;
@@ -110,6 +112,7 @@ var nickCountRef = firebase.database().ref().child('nicks');
       
     });
 });
+
 
 
 firebase.auth().onAuthStateChanged(function(user) {
