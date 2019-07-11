@@ -88,23 +88,24 @@ function addNicktoDatabase(n) {
 var nickCountRef = firebase.database().ref().child('nicks');
   nickCountRef.on('value', function(snapshot) {
     $('#show-nicks').empty();   
-    var nickHTMLItem = "Here all Nicks you database!" 
+    var nickHTMLItem = `<h3>Here all Nicks you database!</h3>` 
     snapshot.forEach(function(childsnapshot) {
       var persom = childsnapshot.val();
-      nickHTMLItem = `
-      <div>
-        <h3>${nickHTMLItem}</h3>        
+      nickHTMLItem += `
+      <div class="pt-1 pb-1">
+        <hr>
         <ul>
-          <li>${persom.name}<li>
-          <li>${persom.owner}<li>
-          <li>${persom.professional}<li>
-          <li>${persom.race}<li>
-          <li>${persom.speed}<li>
-          <li>${persom.stamina}<li>
-          <li>${persom.strenght}<li>
+          <li>Name: <span>${persom.name}</span></li>
+          <li>Owner: <span>${persom.owner}</span></li>
+          <li>Professional: <span>${persom.professional}</span></li>
+          <li>Race: <span>${persom.race}</span></li>
+          <li>Speed: <span>${persom.speed}</span></li>
+          <li>Stamina: <span>${persom.stamina}</span></li>
+          <li>Strenght: <span>${persom.strenght}</span></li>
         </ul>
       </div>
-      `
+      `;
+      $('#show-nicks').html(nickHTMLItem);
       console.log(persom);
       
     });
