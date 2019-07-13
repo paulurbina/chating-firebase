@@ -10,4 +10,4 @@ $('.nick-range').on('change input', function () {
    var currentValue = $(this).val();
    $(this).parent().find('span').text(currentValue);
 //    console.log(currentValue);
-})
+});

@@ -95,15 +95,15 @@ var nickCountRef = firebase.database().ref().child('nicks');
       <div class="pt-1 pb-1">
         <hr>
         <ul>
-          <li>Name: <span>${persom.name}</span></li>
-          <li>Owner: <span>${persom.owner}</span></li>
-          <li>Professional: <span>${persom.professional}</span></li>
-          <li>Race: <span>${persom.race}</span></li>
-          <li>Speed: <span>${persom.speed}</span></li>
-          <li>Stamina: <span>${persom.stamina}</span></li>
-          <li>Strenght: <span>${persom.strenght}</span></li>
+          <li>Name: <span class="nick-data-name">${persom.name}</span></li>
+          <li>Owner: <span class="nick-data-owner">${persom.owner}</span></li>
+          <li>Professional: <span class="nick-data-professional">${persom.professional}</span></li>
+          <li>Race: <span class="nick-data-race">${persom.race}</span></li>
+          <li>Speed: <span class="nick-data-speed">${persom.speed}</span></li>
+          <li>Stamina: <span class="nick-data-stamina">${persom.stamina}</span></li>
+          <li>Strenght: <span class="nick-data-strenght">${persom.strenght}</span></li>
           <button type="button" class="btn btn-danger btn-sm delete-nick" id="${persom.id}">Delete Me</button>
-          <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">Edit Nick</button>
+          <button type="button" class="btn btn-primary btn-sm edit-nick-button" data-toggle="modal" data-target="#exampleModal">Edit Nick</button>
         </ul>
       </div>
       `;
