@@ -6,6 +6,8 @@ $(document).on("click" ,".delete-nick", function () {
     firebase.database().ref('users/' + currentUser.uid + '/nicks/' + nickID).remove();
 });
 
+
+//change input range form
 $('.nick-range').on('change input', function () {
    var currentValue = $(this).val();
    $(this).parent().find('span').text(currentValue);

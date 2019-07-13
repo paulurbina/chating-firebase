@@ -83,7 +83,6 @@ function addNicktoDatabase(n) {
     });
 }
 
-
 //SHOW Nick on screen
 var nickCountRef = firebase.database().ref().child('nicks');
   nickCountRef.on('value', function(snapshot) {
