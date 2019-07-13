@@ -53,9 +53,67 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
+            <!-- body modal -->
             <div class="modal-body">
-              <p>Modal body text goes here.</p>
+              <div class="container" id="add-nick">
+                        <form>
+                                <div class="form-group">
+                                  <label for="edit-inputNickName">Create New Nick</label>
+                                  <input type="text" class="form-control" id="edit-inputNickName" aria-describedby="emailHelp" placeholder="Enter Nick">
+                                </div>
+                                <div class="form-group">
+                                    <label for="edit-nickRace">Nick Race</label>
+                                    <div class="input-group">
+                                        <select class="custom-select" id="edit-nickRace" aria-label="Example select with button addon">
+                                          <option value="1" selected>One</option>
+                                          <option value="2">Two</option>
+                                          <option value="3">Three</option>
+                                          <option value="1">One</option>
+                                          <option value="2">Two</option>
+                                          <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="edit-nick-professional"></label>
+                                  <div class="input-group">
+                                      <select class="custom-select" id="edit-nick-professional" aria-label="Example select with button addon">
+                                        <option value="Scaler" selected>Scaler</option>
+                                        <option value="Mirror">Mirror</option>
+                                        <option value="Stek">Stek</option>
+                                        <option value="Scaler">Scaler</option>
+                                        <option value="Mirror">Mirror</option>
+                                        <option value="Stek">Stek</option>
+                                        <option value="Scaler">Scaler</option>
+                                        <option value="Mirror">Mirror</option>
+                                        <option value="Stek">Stek</option>
+                                      </select>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="edit-nick-strenght">Nick Strenght: <span class="attribute-value">50</span></label>
+                                <input type="range" name="nick-points" class="form-control-range nick-range" id="edit-nick-strenght" value="50" min="0" max="100">
+                              </div>
+                              <div class="form-group">
+                                <label for="edit-nick-speed">Nick Speed: <span class="attribute-value">50</span></label>
+                                <input type="range" name="nick-speed" class="form-control-range nick-range" id="edit-nick-speed" value="50" min="0" max="100">
+                              </div>
+                              <div class="form-group">
+                                <label for="edit-nick-stamina">Nick Stamina: <span class="attribute-value">50</span></label>
+                                <input type="range" name="nick-stamina" class="form-control-range nick-range" id="edit-nick-stamina" value="50" min="0" max="100">
+                              </div>
+                             <div class="form-group">
+                               <label for="edit-id-diety">
+                                 <input type="checkbox" id="edit-id-diety">Is Diety
+                               </label>
+                             </div>
+                              <button type="button" id="edit-create-newnick-button" class="btn btn-primary btn-block">Create New Nick</button>
+        
+                        </form>
+                    
+              </div>
             </div>
+            <!-- body modal -->
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <button type="button" class="btn btn-primary">Save changes</button>
