@@ -103,7 +103,7 @@ var nickCountRef = firebase.database().ref().child('nicks');
           <li>Stamina: <span>${persom.stamina}</span></li>
           <li>Strenght: <span>${persom.strenght}</span></li>
           <button type="button" class="btn btn-danger btn-sm delete-nick" id="${persom.id}">Delete Me</button>
-          <button class="btn btn-success btn-sm">Success</button>
+          <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">Edit Nick</button>
         </ul>
       </div>
       `;
