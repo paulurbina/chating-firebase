@@ -14,9 +14,14 @@ $(document).on("click" ,".edit-nick-button", function () {
      $('#edit-nick-stamina').val(nickStamina).change();
      $('#edit-nick-strenght').val(nickStrenght).change();
      // validation diety
-     if(nickDiety == true) {
-         $('#edit-id-diety').chec("checked", true)
-     } else {
-         $('#edit-id-diety').prop("checked", false);
-     }
+    //  if(nickDiety === true) {
+    //      $('#edit-id-diety').attr("checked", true)
+    //  } else {
+    //      $('#edit-id-diety').attr("checked", false);
+    //  }
+    if ($('#nickDiety').is(":checked")) {
+        $('#edit-id-diety').attr("checked", true);
+    } else {
+        $('#edit-id-diety').attr("checked", false);
+    }
 });

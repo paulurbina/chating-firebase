@@ -206,11 +206,15 @@
                         <label for="nick-stamina">Nick Stamina: <span class="attribute-value">50</span></label>
                         <input type="range" name="nick-stamina" class="form-control-range nick-range" id="nick-stamina" value="50" min="0" max="100">
                       </div>
-                     <div class="form-group">
-                       <label for="">
+                     <!-- <div class="form-group">
                          <input type="checkbox" id="id-diety">Is Diety
-                       </label>
-                     </div>
+                     </div> -->
+                    <div class="form-group">
+                      <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="id-diety">
+                          <label class="custom-control-label" for="id-diety">Is Diety</label>
+                      </div>
+                    </div>
                       <button type="button" id="create-newnick-button" class="btn btn-primary btn-block">Create New Nick</button>
 
                 </form>
