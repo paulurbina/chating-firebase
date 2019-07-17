@@ -1,4 +1,8 @@
 $(document).on("click" ,".edit-nick-button", function () { 
+    // input hidden form edit
+    var nickid = $(this).attr('data-nickid');
+    $('#nickid').val(nickid);
+
     var nickName = $(this).closest('ul').find('.nick-data-name').text();    
     var nickRace = $(this).closest('ul').find(".nick-data-race").text();
     var nickProfessinal = $(this).closest('ul').find(".nick-data-professional").text();
@@ -17,8 +21,6 @@ $(document).on("click" ,".edit-nick-button", function () {
      if(nickDiety == 'true') {
          $('#edit-id-diety').attr("checked", true);
      } else {
-         console.log('false');
-         
         $('#edit-id-diety').attr("checked", false);
      }
     // if ($('#nickDiety').is(":checked")) {
@@ -26,4 +28,22 @@ $(document).on("click" ,".edit-nick-button", function () {
     // } else {
     //     $('#edit-id-diety').attr("checked", false);
     // }
+});
+
+$('#edit-create-newnick-button').click(function () {
+    var nick = {
+        id: $('#nickid').val(),
+        owner: currentUser.uid,
+        name: $('#edit-inputNickName').val(),
+        race: $('#edit-nickRace :selected').val(),
+        professional: $('#edit-nick-professional :selected').val(),
+        strenght: $('#edit-nick-strenght').val(),
+        speed: $('#edit-nick-speed').val(),
+        stamina: $('#edit-nick-stamina').val(),
+        diety: $('#edit-id-diety').prop('checked')
+      };
+
+      console.log('update nick');
+      console.log(nick);
+      addNicktoDatabase(nick);
 });
