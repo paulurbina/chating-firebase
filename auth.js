@@ -49,11 +49,13 @@ function SignIn(email, password) {
 $('#logout-button').click(function () {
     firebase.auth().signOut().then(function() {
         // Sign-out successful.
-        console.log('logout as');
+        console.log('logout as:', currentUser.email);
         //show login form
         $('#login-form').show();
         //hide create nick form
         $('#add-nick').hide();
+        
+        
       }).catch(function(error) {
         // An error happened.
       });
@@ -90,11 +92,11 @@ function addNicktoDatabase(n) {
 var nickCountRef = firebase.database().ref().child('nicks');
   nickCountRef.on('value', function(snapshot) {
     $('#show-nicks').empty();   
-    var nickHTMLItem = `<h3>Here all Nicks you database!</h3>` 
+    var nickHTMLItem = `<h3 class="col-md-6 offset-md-3 pt-1 pb-1">Here all Nicks you database!</h3>` 
     snapshot.forEach(function(childsnapshot) {
       var persom = childsnapshot.val();
       nickHTMLItem += `
-      <div class="pt-1 pb-1">
+      <div class="col-md-6 offset-md-3 pt-1 pb-1">
         <hr>
         <ul>
           <li>Name: <span class="nick-data-name">${persom.name}</span></li>
@@ -137,8 +139,13 @@ firebase.auth().onAuthStateChanged(function(user) {
       //show the create nick form
       $('#add-nick').show()
 
+      //show button logout
+      $('#logout-button').show();
+
     } else {
-      // User is signed out.
-      // ...
+      //hide user form
+      $('#add-nick').hide();
+       //hide button logout
+       $('#logout-button').hide();
     }
   });
