@@ -50,7 +50,10 @@ $('#logout-button').click(function () {
     firebase.auth().signOut().then(function() {
         // Sign-out successful.
         console.log('logout as');
-        
+        //show login form
+        $('#login-form').show();
+        //hide create nick form
+        $('#add-nick').hide();
       }).catch(function(error) {
         // An error happened.
       });
@@ -128,6 +131,12 @@ firebase.auth().onAuthStateChanged(function(user) {
       writeUserData(user);
       console.log(currentUser.email + " has logged in");
       // ...
+      // hide login form
+      $('#login-form').hide();
+
+      //show the create nick form
+      $('#add-nick').show()
+
     } else {
       // User is signed out.
       // ...
